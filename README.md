@@ -2,6 +2,8 @@
 
 An original, playable third-person shooter prototype inspired by painterly adventure-game environments and layered diegetic HUDs.
 
+**Live game:** https://vibehub.microsoft.com/app/vaaadith-jhj_87/
+
 You play **Mara Venn**, the last Wayfinder. The ancient Heartshard beneath Skywatch has
 reanimated its dead wardens and corrupted the garden's creatures into the **Shardborn**.
 Mara must cross three ruined districts, defeat the Heartwyrm, and stabilize the beacon
