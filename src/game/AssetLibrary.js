@@ -3,64 +3,66 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { clone as cloneSkeleton } from "three/examples/jsm/utils/SkeletonUtils.js";
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 const CHARACTER_PATHS = {
-  ranger: "/assets/characters/ranger.glb",
-  skeletonRogue: "/assets/characters/skeleton-rogue.glb",
-  skeletonMage: "/assets/characters/skeleton-mage.glb",
-  skeletonWarrior: "/assets/characters/skeleton-warrior.glb",
+  ranger: assetPath("assets/characters/ranger.glb"),
+  skeletonRogue: assetPath("assets/characters/skeleton-rogue.glb"),
+  skeletonMage: assetPath("assets/characters/skeleton-mage.glb"),
+  skeletonWarrior: assetPath("assets/characters/skeleton-warrior.glb"),
 };
 
 const ANIMATION_PATHS = [
-  "/assets/animations/movement-basic.glb",
-  "/assets/animations/general.glb",
-  "/assets/animations/combat-ranged.glb",
+  assetPath("assets/animations/movement-basic.glb"),
+  assetPath("assets/animations/general.glb"),
+  assetPath("assets/animations/combat-ranged.glb"),
 ];
 
 const PROP_PATHS = {
-  heroCrossbow: "/assets/props/crossbow_2handed.gltf",
-  skeletonCrossbow: "/assets/props/Skeleton_Crossbow.gltf",
-  skeletonStaff: "/assets/props/Skeleton_Staff.gltf",
+  heroCrossbow: assetPath("assets/props/crossbow_2handed.gltf"),
+  skeletonCrossbow: assetPath("assets/props/Skeleton_Crossbow.gltf"),
+  skeletonStaff: assetPath("assets/props/Skeleton_Staff.gltf"),
 };
 
 const MONSTER_PATHS = {
-  dragon: "/assets/characters/quaternius-dragon.fbx",
-  slime: "/assets/characters/quaternius-slime.fbx",
-  bat: "/assets/characters/quaternius-bat.fbx",
+  dragon: assetPath("assets/characters/quaternius-dragon.fbx"),
+  slime: assetPath("assets/characters/quaternius-slime.fbx"),
+  bat: assetPath("assets/characters/quaternius-bat.fbx"),
 };
 
 const ENVIRONMENT_PATHS = {
-  wallBroken: "/assets/environment/wall_broken.gltf",
-  wallDoorway: "/assets/environment/wall_doorway.gltf",
-  wallArched: "/assets/environment/wall_arched.gltf",
-  pillarDecorated: "/assets/environment/pillar_decorated.gltf",
-  stairs: "/assets/environment/stairs.gltf",
-  crates: "/assets/environment/crates_stacked.gltf",
-  barrel: "/assets/environment/barrel_large_decorated.gltf",
-  floorRocks: "/assets/environment/floor_tile_large_rocks.gltf",
+  wallBroken: assetPath("assets/environment/wall_broken.gltf"),
+  wallDoorway: assetPath("assets/environment/wall_doorway.gltf"),
+  wallArched: assetPath("assets/environment/wall_arched.gltf"),
+  pillarDecorated: assetPath("assets/environment/pillar_decorated.gltf"),
+  stairs: assetPath("assets/environment/stairs.gltf"),
+  crates: assetPath("assets/environment/crates_stacked.gltf"),
+  barrel: assetPath("assets/environment/barrel_large_decorated.gltf"),
+  floorRocks: assetPath("assets/environment/floor_tile_large_rocks.gltf"),
 };
 
 const NATURE_PATHS = {
-  commonTree: "/assets/nature/CommonTree_2.gltf",
-  twistedTree: "/assets/nature/TwistedTree_3.gltf",
-  floweringBush: "/assets/nature/Bush_Common_Flowers.gltf",
-  grassShort: "/assets/nature/Grass_Common_Short.gltf",
-  grassTall: "/assets/nature/Grass_Wispy_Tall.gltf",
-  flowersYellow: "/assets/nature/Flower_3_Group.gltf",
-  flowersBlue: "/assets/nature/Flower_4_Group.gltf",
-  rockA: "/assets/nature/Rock_Medium_1.gltf",
-  rockB: "/assets/nature/Rock_Medium_3.gltf",
-  steppingStone: "/assets/nature/RockPath_Round_Small_1.gltf",
+  commonTree: assetPath("assets/nature/CommonTree_2.gltf"),
+  twistedTree: assetPath("assets/nature/TwistedTree_3.gltf"),
+  floweringBush: assetPath("assets/nature/Bush_Common_Flowers.gltf"),
+  grassShort: assetPath("assets/nature/Grass_Common_Short.gltf"),
+  grassTall: assetPath("assets/nature/Grass_Wispy_Tall.gltf"),
+  flowersYellow: assetPath("assets/nature/Flower_3_Group.gltf"),
+  flowersBlue: assetPath("assets/nature/Flower_4_Group.gltf"),
+  rockA: assetPath("assets/nature/Rock_Medium_1.gltf"),
+  rockB: assetPath("assets/nature/Rock_Medium_3.gltf"),
+  steppingStone: assetPath("assets/nature/RockPath_Round_Small_1.gltf"),
 };
 
 const VFX_PATHS = {
-  magic: "/assets/vfx/magic_02.png",
-  muzzle: "/assets/vfx/muzzle_02.png",
-  spark: "/assets/vfx/spark_03.png",
-  smoke: "/assets/vfx/smoke_04.png",
-  star: "/assets/vfx/star_06.png",
-  flare: "/assets/vfx/flare_01.png",
-  scorch: "/assets/vfx/scorch_01.png",
-  ring: "/assets/vfx/circle_03.png",
+  magic: assetPath("assets/vfx/magic_02.png"),
+  muzzle: assetPath("assets/vfx/muzzle_02.png"),
+  spark: assetPath("assets/vfx/spark_03.png"),
+  smoke: assetPath("assets/vfx/smoke_04.png"),
+  star: assetPath("assets/vfx/star_06.png"),
+  flare: assetPath("assets/vfx/flare_01.png"),
+  scorch: assetPath("assets/vfx/scorch_01.png"),
+  ring: assetPath("assets/vfx/circle_03.png"),
 };
 
 function prepareScene(scene, cloneMaterials = true) {

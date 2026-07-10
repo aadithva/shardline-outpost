@@ -2,6 +2,8 @@
   "name": "shardline-outpost",
   "version": "0.1.0",
   "private": true,
+  "description": "A stylized third-person 3D shooter with animated CC0 characters and a Heartwyrm boss encounter.",
+  "keywords": ["threejs", "vite", "3d", "game", "shooter"],
   "type": "module",
   "scripts": {
     "dev": "vite",
