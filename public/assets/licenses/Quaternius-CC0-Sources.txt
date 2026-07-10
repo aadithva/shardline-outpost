@@ -1,0 +1,4 @@
+Quaternius assets are CC0: https://creativecommons.org/publicdomain/zero/1.0/
+Sources:
+https://quaternius.itch.io/lowpoly-animated-monsters
+https://quaternius.itch.io/stylized-nature-megakit

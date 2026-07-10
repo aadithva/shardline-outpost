@@ -1,0 +1,8 @@
+node_modules/
+dist/
+assets/_downloads/
+.playwright-mcp/
+.env.vibehub
+deploy.zip
+.DS_Store
+*.log
